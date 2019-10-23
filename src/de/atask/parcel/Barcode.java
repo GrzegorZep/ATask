@@ -14,7 +14,7 @@ public class Barcode {
         return value;
     }
 
-    public List<Character> getCharacterList() {
+    List<Character> getCharacterList() {
         return value.chars().mapToObj(c -> (char) c).collect(Collectors.toList());
     }
 }

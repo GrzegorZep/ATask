@@ -3,13 +3,13 @@ package de.atask.parcel;
 import java.util.Objects;
 
 public class CheckDigit {
-    private String value;
+    private Character value;
 
-    public CheckDigit(String checkDigit){
+    public CheckDigit(Character checkDigit){
         this.value = checkDigit;
     }
 
-    public String getValue() {
+    public Character getValue() {
         return value;
     }
 
