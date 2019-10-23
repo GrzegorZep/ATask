@@ -1,9 +1,13 @@
 package de.atask.parcel;
 
-class CheckDigit {
-    private String cD;
+public class CheckDigit {
+    private String value;
 
-    CheckDigit(String checkDigit){
-        this.cD = checkDigit;
+    public CheckDigit(String checkDigit){
+        this.value = checkDigit;
+    }
+
+    public String getValue() {
+        return value;
     }
 }

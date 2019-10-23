@@ -1,5 +1,6 @@
 package de.atask.parcel;
 
+import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -15,6 +16,25 @@ public class Parcel {
     }).collect(Collectors.toMap(o -> (String) o[0], o -> (Byte) o[1]));
 
     public static CheckDigit calculate(Barcode barcode) {
-        return new CheckDigit("");
+
+        int cd, val;
+        cd = MOD;
+        Iterator it = barcode.getCharacterList().iterator();
+        while (it.hasNext()) {
+            val = BARCODE_VALUES.get(it.next());
+            cd = cd + val;
+            if (cd > MOD)
+                cd = cd - MOD;
+            cd = 2 * cd;
+            if (cd > MOD)
+                cd = cd - MOD - 1;
+        }
+        cd = MOD + 1 - cd;
+        if (cd == MOD)
+            cd = 0;
+        int finalCd = cd;
+        String result = BARCODE_VALUES.keySet().stream()
+                .filter(k -> BARCODE_VALUES.get(k).equals(finalCd)).findFirst().get();
+        return new CheckDigit(result);
     }
 }
