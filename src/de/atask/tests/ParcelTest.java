@@ -25,7 +25,7 @@ public class ParcelTest {
     private static void shouldReturnGivenCheckDigitWhenCalculatingcorrespondingBarcode(Barcode barcode, CheckDigit checkDigit) {
 
         CheckDigit result = Parcel.calculate(barcode);
-        assert result.getValue().equals(checkDigit.getValue()) : "Check Digit was diffrent!";
+        assert result.equals(checkDigit) : "Check Digit was diffrent!";
     }
 
 }
