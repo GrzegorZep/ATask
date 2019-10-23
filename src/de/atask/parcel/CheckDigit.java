@@ -1,4 +1,9 @@
 package de.atask.parcel;
 
-public class CheckDigit {
+class CheckDigit {
+    private String cD;
+
+    CheckDigit(String checkDigit){
+        this.cD = checkDigit;
+    }
 }
