@@ -21,7 +21,7 @@ public class Parcel {
         cd = MOD;
         Iterator it = barcode.getCharacterList().iterator();
         while (it.hasNext()) {
-            val = BARCODE_VALUES.get(it.next().toString()).intValue();
+            val = BARCODE_VALUES.get(it.next().toString());
             cd = cd + val;
             if (cd > MOD)
                 cd = cd - MOD;
