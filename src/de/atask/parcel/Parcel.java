@@ -1,6 +1,5 @@
 package de.atask.parcel;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
